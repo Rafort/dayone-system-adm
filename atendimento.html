@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js">
+  </script>
+  <title>DayOne System</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/icon.png">
+</head>
+
+<body class="bd-color">
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-dark nav-color">
+    <a class="navbar-brand" href="home.html"><img src="assets/img/logo-dayone.png" class="d-inline-block align-top" height="26px"></a>
+    <div class="navbar-nav justify-content-end ml-auto">
+      <div class="nav-profile mr-3 text-light text-right">Admin</div>
+      <div class="nav-profile2 mr-3 text-light text-right">Fernanda</div>
+    </div>
+    <button class="navbar-toggler border-0" type="button" data-toggle="dropdown" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true" id="dropdown01">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbar" >
+      <div class="dropdown-menu megamenu" aria-labelledby="dropdown01" >
+        <div class="row">
+          <div class="col-sm-6 col-lg-2 col-6 py-3 d-none d-lg-block d-lg-none">
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Empresas</h6>
+            <a class="dropdown-item" href="empresas.html">Listar</a>
+            <a class="dropdown-item" href="cadastrar-empresa.html">Cadastrar</a>
+            <a class="dropdown-item" href="filtrar-empresa.html">Filtrar</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Apps</h6>
+            <a class="dropdown-item" href="apps.html">Lista de Apps</a>
+            <a class="dropdown-item" href="cadastrar-app.html">Cadastrar</a>
+            <a class="dropdown-item" href="utilizacao.html">Utilização</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Financeiro</h6>
+            <a class="dropdown-item" href="faturas.html">Faturas</a>
+            <a class="dropdown-item" href="pendencias.html">Pendências</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Suporte</h6>
+            <a class="dropdown-item" href="chamados.html">Chamados abertos</a>
+            <a class="dropdown-item" href="chamados-fechados.html">Chamados fechados</a>
+            <a class="dropdown-item" href="atendimentos.html">Meus atendimentos</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Perfil</h6>
+            <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+            <a class="dropdown-item" href="#" data-target="#logout" data-toggle="modal">Logout <i class="fa fa-sign-out ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <div class="container-fluid">
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-12">
+          <div class="page-header">
+            <div class="page-title">
+              <a href="#" onclick="history.back()"><i class="ti-angle-left float-left mr-2 mt-1"></i></a>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="atendimentos.html">Meus atendimentos</a></li>
+                <li class="breadcrumb-item active">Atendimento</li>
+              </ol>
+              <h4>Suporte</h4>
+              <div class="btn-group"> <a href="chamados.html" class="btn btn-link">Chamados abertos</a> <a href="chamados-fechados.html" class="btn btn-link">Chamados fechados</a> <a href="atendimentos.html" class="btn btn-link">Meus atendimentos</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h5 class="text-primary">Atendimento</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center col-lg-1"> </div>
+        <div class="col-lg-11 col-12">
+          <div class="row">
+            <div class="mb-2 col-md-12 col-lg-8">
+              <div class="row">
+                <div class="col-md-12 border-bottom mb-2 pl-0">
+                  <p class="tt-h55 my-2">005433</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 pl-0 col-6">
+                  <h6>Criação:</h6>
+                  <p>09/10/2023 15:45</p>
+                </div>
+                <div class="col-md-4 pl-0 col-6">
+                  <h6>Tipo:</h6>
+                  <p>Ajuda</p>
+                </div>
+                <div class="col-md-4 pl-0 col-6">
+                  <h6>Prioridade</h6>
+                  <p>Média / Inconsistência</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 px-0 col-6">
+                  <h6>Empresa:</h6>
+                  <p>SPAIPA</p>
+                </div>
+                <div class="col-md-4 pl-0 col-6">
+                  <h6>Solicitante:</h6>
+                  <p>Bárbara</p>
+                </div>
+                <div class="col-md-4 px-0 col-6">
+                  <h6>Responsável:</h6>
+                  <p>Fernanda</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 border-top px-0">
+                  <div class="col-xs-8 col-12 col-lg-12 px-0 mb-2">
+                    <h6>Necessidade:</h6>
+                    <p>Solicito alteração no cadastro da empresa. Houve alteração do CNPJ. Trocar o atual pelo novo: 0120012901/01201-88.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6 col-12 pt-2">
+                  <h6>Esse chamado foi resolvido?</h6>
+                  <div class="custom-control custom-radio mx-3 my-1">
+                    <input type="radio" id="sim" name="solve" class="custom-control-input">
+                    <label class="custom-control-label" for="sim">SIM</label>
+                  </div>
+                  <div class="custom-control custom-radio mx-3 my-1">
+                    <input type="radio" id="nao" name="solve" class="custom-control-input">
+                    <label class="custom-control-label" for="nao">NÃO</label>
+                  </div>
+                </div>
+                <div class="form-group col-md-6 col-12 pt-2">
+                  <h6>Quanto tempo levou para resolver o chamado?</h6>
+                  <div class="custom-control custom-radio mx-3 my-1">
+                    <input type="radio" id="30" name="tempo" class="custom-control-input">
+                    <label class="custom-control-label" for="30">Menos de 30min</label>
+                  </div>
+                  <div class="custom-control custom-radio mx-3 my-1">
+                    <input type="radio" id="1h" name="tempo" class="custom-control-input">
+                    <label class="custom-control-label" for="1h">entre 30min e 1h</label>
+                  </div>
+                  <div class="custom-control custom-radio mx-3 my-1">
+                    <input type="radio" id="1hmais" name="tempo" class="custom-control-input">
+                    <label class="custom-control-label" for="1hmais">Mais de 1h</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12 mb-3">
+                  <textarea class="form-control" rows="5" placeholder="Comente aqui caso deseje dar um retorno ao cliente"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 pb-3 pt-2 d-flex justify-content-around align-items-center col-lg-11">
+                  <a class="btn btn-link btn-sm" href="atendimentos.html">Ir para meus atendimentos</a>
+                  <a class="btn btn-primary btn-sm" href="chamado-fechado.html">Concluir esse chamado</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2 mb-5">
+        <div class="col-md-12 mb-4"> </div>
+      </div>
+      <!-- Content Row -->
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="py-2 my-0 bg-secondary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0 text-light small">© DayOne System</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal logout -->
+  <div class="modal fade mt-2" id="logout">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-primary mt-0">Logout</h4> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja encerrar a sessão?</p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn px-3 btn-secondary" href="index.html">Sair</a>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Voltar</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
+  <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <!-- bootstrap -->
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  
+</body>
+
+</html>

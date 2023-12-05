@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js">
+  </script>
+  <title>DayOne System</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/icon.png">
+</head>
+
+<body class="bd-color">
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-dark nav-color">
+    <a class="navbar-brand" href="home.html"><img src="assets/img/logo-dayone.png" class="d-inline-block align-top" height="26px"></a>
+    <div class="navbar-nav justify-content-end ml-auto">
+      <div class="nav-profile mr-3 text-light text-right">Admin</div>
+      <div class="nav-profile2 mr-3 text-light text-right">Fernanda</div>
+    </div>
+    <button class="navbar-toggler border-0" type="button" data-toggle="dropdown" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true" id="dropdown01">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbar" >
+      <div class="dropdown-menu megamenu" aria-labelledby="dropdown01" >
+        <div class="row">
+          <div class="col-sm-6 col-lg-2 col-6 py-3 d-none d-lg-block d-lg-none">
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Empresas</h6>
+            <a class="dropdown-item" href="empresas.html">Listar</a>
+            <a class="dropdown-item" href="cadastrar-empresa.html">Cadastrar</a>
+            <a class="dropdown-item" href="filtrar-empresa.html">Filtrar</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Apps</h6>
+            <a class="dropdown-item" href="apps.html">Lista de Apps</a>
+            <a class="dropdown-item" href="cadastrar-app.html">Cadastrar</a>
+            <a class="dropdown-item" href="utilizacao.html">Utilização</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Financeiro</h6>
+            <a class="dropdown-item" href="faturas.html">Faturas</a>
+            <a class="dropdown-item" href="pendencias.html">Pendências</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Suporte</h6>
+            <a class="dropdown-item" href="chamados.html">Chamados abertos</a>
+            <a class="dropdown-item" href="chamados-fechados.html">Chamados fechados</a>
+            <a class="dropdown-item" href="atendimentos.html">Meus atendimentos</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Perfil</h6>
+            <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+            <a class="dropdown-item" href="#" data-target="#logout" data-toggle="modal">Logout <i class="fa fa-sign-out ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <div class="container-fluid">
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-12">
+          <div class="page-header">
+            <div class="page-title">
+              <a href="#" onclick="history.back()"><i class="ti-angle-left float-left mr-2 mt-1"></i></a>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                <li class="breadcrumb-item active">Empresas</li>
+              </ol>
+              <h4>Empresas</h4>
+              <div class="btn-group"> <a href="empresas.html" class="btn btn-link pl-1">Listar</a> <a href="cadastrar-empresa.html" class="btn btn-link">Cadastrar</a> <a href="filtrar-empresa.html" class="btn btn-link">Filtrar</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-title pr">
+              <h4>Geral</h4>
+            </div>
+            <div class="bootstrap-data-table-panel">
+              <div class="table-responsive">
+                <table id="bootstrap-data-table-export" class="table table-hover largee">
+                  <thead>
+                    <tr>
+                      <th>Empresa</th>
+                      <th>Usuários</th>
+                      <th>Plano</th>
+                      <th>Chamados abertos</th>
+                      <th>Pendências</th>
+                      <th class="text-center">Selecionar todos <div class="form-check form-check-inline mr-0 px-0">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr onclick="location.href='empresa.html'">
+                      <td>Acelormittal</td>
+                      <td>47</td>
+                      <td>11-50</td>
+                      <td>2</td>
+                      <td>0</td>
+                      <td class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr onclick="location.href='empresa.html'">
+                      <td>Siemens</td>
+                      <td>435</td>
+                      <td>+100</td>
+                      <td>6</td>
+                      <td>1</td>
+                      <td class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr onclick="location.href='empresa.html'">
+                      <td>Renault SA</td>
+                      <td>612</td>
+                      <td>+100</td>
+                      <td>11</td>
+                      <td>1</td>
+                      <td class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr onclick="location.href='empresa.html'">
+                      <td>SPAIPA</td>
+                      <td>125</td>
+                      <td>+100</td>
+                      <td>2</td>
+                      <td>0</td>
+                      <td class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr onclick="location.href='empresa.html'">
+                      <td>Brado Logística</td>
+                      <td>275</td>
+                      <td>+100</td>
+                      <td>1</td>
+                      <td>0</td>
+                      <td class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr onclick="location.href='empresa.html'">
+                      <td>Bancoob</td>
+                      <td>95</td>
+                      <td>51-100</td>
+                      <td>2</td>
+                      <td>0</td>
+                      <td class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /# card -->
+        </div>
+      </div>
+      <div class="row my-3 mx-auto pb-4">
+        <div class="col-lg-2"> </div>
+        <div class="text-center col-lg-3">
+          <h6 class="mt-2 text-muted">Aplicar ação aos selecionados:</h6>
+        </div>
+        <div class="col-lg-3">
+          <div class="form-group">
+            <div class="form-group"><select id="actionSelect" class="form-control mt-1">
+                <option value="1">Suspender serviço</option>
+                <option value="2">Excluir empresa</option>
+              </select></div>
+          </div>
+        </div>
+        <div class="text-center col-lg-2">
+          <a class="btn mr-1 mt-2 mb-1 btn-secondary px-3 btn-sm" href="#">Confirmar</a>
+        </div>
+      </div>
+      <!-- Content Row -->
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="py-2 my-0 bg-secondary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0 text-light small">© DayOne System</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal logout -->
+  <div class="modal fade mt-2" id="logout">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-primary mt-0">Logout</h4> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja encerrar a sessão?</p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn px-3 btn-secondary" href="index.html">Sair</a>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Voltar</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
+  <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <!-- bootstrap -->
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <!-- // Chart js -->
+  <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+  <script src="assets/js/lib/chart-js/chartjs-init.js"></script>
+  <script src="assets/js/plot.js"></script>
+  <script src="assets/js/plot2.js"></script>
+  <!-- Datatables-->
+  <script src="assets/js/lib/data-table/datatables.min.js"></script>
+  <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+  <script src="assets/js/lib/data-table/buttons.flash.min.js"></script>
+  <script src="assets/js/lib/data-table/jszip.min.js"></script>
+  <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+  <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+  <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+  <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+  <script src="assets/js/lib/data-table/datatables-init.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js">
+  </script>
+  <title>DayOne System</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/icon.png">
+</head>
+
+<body class="bd-color">
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-dark nav-color">
+    <a class="navbar-brand" href="home.html"><img src="assets/img/logo-dayone.png" class="d-inline-block align-top" height="26px"></a>
+    <div class="navbar-nav justify-content-end ml-auto">
+      <div class="nav-profile mr-3 text-light text-right">Admin</div>
+      <div class="nav-profile2 mr-3 text-light text-right">Fernanda</div>
+    </div>
+    <button class="navbar-toggler border-0" type="button" data-toggle="dropdown" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true" id="dropdown01">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbar">
+      <div class="dropdown-menu megamenu" aria-labelledby="dropdown01">
+        <div class="row">
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Colaboradores</h6>
+            <a class="dropdown-item" href="colaboradores.html">Geral</a>
+            <a class="dropdown-item" href="cadastrar-colaborador.html">Cadastrar</a>
+            <a class="dropdown-item" href="filtrar-colaborador.html">Filtrar</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Organização</h6>
+            <a class="dropdown-item" href="sedes.html">Sedes</a>
+            <a class="dropdown-item" href="setores.html">Setores</a>
+            <a class="dropdown-item" href="turnos.html">Turnos</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Controle de Apps</h6>
+            <a class="dropdown-item" href="apps.html">Lista de Apps</a>
+            <a class="dropdown-item" href="modelo-de-controle.html">Modelo de controle</a>
+            <a class="dropdown-item" href="relatorio.html">Relatório</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Faturas</h6>
+            <a class="dropdown-item" href="faturas.html">Histórico</a>
+            <a class="dropdown-item" href="faturas-abertas.html">Faturas abertas</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Suporte</h6>
+            <a class="dropdown-item" href="abrir-chamado.html">Abrir chamado</a>
+            <a class="dropdown-item" href="chamados.html">Meus chamados</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Perfil</h6>
+            <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+            <a class="dropdown-item" href="#" data-target="#logout" data-toggle="modal">Logout <i class="fa fa-sign-out ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="py-3">
+    <div class="container-fluid">
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="card h-100">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="ti-user text-primary  px-1"></i>
+              </div>
+              <div class="stat-content dib">
+                <div class="stat-text">Total de usuários</div>
+                <div class="stat-digit">26.459</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card h-100">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="ti-flag px-1 text-warning"></i>
+              </div>
+              <div class="stat-content dib">
+                <div class="stat-text">Empresa com mais chamados</div>
+                <div class="stat-digit">Renault SA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card h-100">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="ti-comment-alt px-0 text-danger"></i>
+              </div>
+              <div class="stat-content dib">
+                <div class="stat-text">Chamados urgentes abertos</div>
+                <div class="stat-digit">3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card h-100">
+            <div class="stat-widget-one">
+              <div class="stat-icon dib"><i class="ti-comments-smiley px-1 text-success"></i></div>
+              <div class="stat-content dib">
+                <div class="stat-text">Chamados resolvidos</div>
+                <div class="stat-digit">92 %</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="d-flex col-lg-4 col-12" >
+          <div class="card w-100">
+            <div class="card-title">
+              <h4>Próximos recebimentos</h4>
+              <div class="card-body">
+                <row>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Renault SA</p>
+                    <h6 class="text-muted">05/12/2023</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Siemens</p>
+                    <h6 class="text-muted">10/12/2023</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Acelormittal</p>
+                    <h6 class="text-muted">10/12/2023</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <a class="btn btn-outline-primary float-right btn-sm mx-auto my-2" href="#">Faturas <i class="ti-angle-right py-1"></i></a>
+                  </div>
+                </row>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex col-lg-4 col-12" >
+          <div class="card w-100">
+            <div class="card-title">
+              <h4>Pagamentos pendentes</h4>
+              <div class="card-body">
+                <row>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Renault</p>
+                    <h6 class="">R$ 17.000,00</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Acelormittal</p>
+                    <h6 class="">R$ 12.400,00</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>SPAIPA</p>
+                    <h6 class="">R$ 6.500,00</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <a class="btn btn-outline-primary float-right btn-sm mx-auto my-2" href="#">Em atraso <i class="ti-angle-right py-1"></i></a>
+                  </div>
+                </row>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex col-lg-4 col-12" >
+          <div class="card w-100" >
+            <div class="card-title">
+              <h4>Últimos chamados abertos</h4>
+              <div class="card-body">
+                <row>
+                  <div class="col-lg-12 col-12 border-bottom d-flex px-0 pb-0 pt-2 align-items-center justify-content-between">
+                    <p>SPAIPA</p>
+                    <h6 class="text-danger">Urgente</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex px-0 pb-0 pt-2 align-items-center justify-content-between">
+                    <p>Acelormittal</p>
+                    <h6>Média</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex px-0 pb-0 pt-2 align-items-center justify-content-between">
+                    <p>Siemens</p>
+                    <h6>Baixa</h6>
+                  </div>
+                  <div class="col-lg-12 col-12 d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <a class="btn btn-outline-primary float-right btn-sm mx-auto my-2" href="#">Chamados abertos <i class="ti-angle-right py-1"></i></a>
+                  </div>
+                </row>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="d-flex col-12 col-lg-5" >
+          <div class="card w-100">
+            <div class="card-title">
+              <h4>Uso de Apps - Média diária </h4>
+            </div>
+            <div class="card-body">
+              <canvas id="plots" height="120" width="330"></canvas>
+              <div class="row">
+                <div class="col-lg-12 col-12 d-flex justify-content-between align-items-center px-0 pt-4 pb-0">
+                  <a class="btn btn-outline-primary float-right btn-sm mx-auto my-2" href="#">Relatório <i class="ti-angle-right py-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-title pr">
+              <h4>Em desconexão</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover m-t-20">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Empresa</th>
+                      <th>Status do aplicativo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr onclick="location.href='colaborador.html'" style="cursor: pointer;">
+                      <td>João Luiz da Silva</td>
+                      <td>SPAIPA</td>
+                      <td>Desconectado<i class="fa fa-circle float-right mt-1 text-danger"></i></td>
+                    </tr>
+                    <tr onclick="location.href='colaborador.html'" style="cursor: pointer;">
+                      <td>Fábio Gouveia</td>
+                      <td>Siemens</td>
+                      <td>Desconectado<i class="fa fa-circle float-right mt-1 text-danger"></i></td>
+                    </tr>
+                    <tr onclick="location.href='colaborador.html'" style="cursor: pointer;">
+                      <td>Maria Cândida Vaz</td>
+                      <td>Curitiba</td>
+                      <td>+ 10 min offline<i class="fa fa-circle float-right mt-1 text-warning"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-12 d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                  <a class="btn btn-outline-primary float-right btn-sm mx-auto my-2" href="#">Desconexão<i class="ti-angle-right py-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex col-12 col-lg-3" >
+          <div class="card w-100">
+            <div class="card-title">
+              <h4>Meus atendimentos recentes</h4>
+              <div class="card-body">
+                <row>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>SPAIPA</p>
+                    <a class="btn btn-link" href="#">
+                      <h6 class="text-secondary">Em processo</h6>
+                    </a>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Siemens</p>
+                    <a class="btn btn-link" href="#">
+                      <h6 class="text-secondary">Fechado</h6>
+                    </a>
+                  </div>
+                  <div class="col-lg-12 col-12 border-bottom d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <p>Motorola SA</p>
+                    <a class="btn btn-link" href="#">
+                      <h6 class="text-secondary">Fechado</h6>
+                    </a>
+                  </div>
+                  <div class="col-lg-12 col-12 d-flex justify-content-between px-0 pb-0 pt-2 align-items-center">
+                    <a class="btn btn-outline-primary float-right btn-sm mx-auto my-2" href="#">Meus atendimentos<i class="ti-angle-right py-1"></i></a>
+                  </div>
+                </row>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="py-2 my-0 bg-secondary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0 text-light small">© DayOne System</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade mt-2" id="logout">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-primary mt-0">Logout</h4> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja encerrar a sessão?</p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn px-3 btn-secondary" href="index.html">Sair</a>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Voltar</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <!-- bootstrap -->
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <!-- // Chart js -->
+  <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+  <script src="assets/js/lib/chart-js/chartjs-init.js"></script>
+  <script src="assets/js/plot.js"></script>
+  <script src="assets/js/plot2.js"></script>
+  <!-- scripit init-->
+  
+</body>
+
+</html>

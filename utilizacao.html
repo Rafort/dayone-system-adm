@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js">
+  </script>
+  <title>DayOne System</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/icon.png">
+</head>
+
+<body class="bd-color">
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-dark nav-color">
+    <a class="navbar-brand" href="home.html"><img src="assets/img/logo-dayone.png" class="d-inline-block align-top" height="26px"></a>
+    <div class="navbar-nav justify-content-end ml-auto">
+      <div class="nav-profile mr-3 text-light text-right">Admin</div>
+      <div class="nav-profile2 mr-3 text-light text-right">Fernanda</div>
+    </div>
+    <button class="navbar-toggler border-0" type="button" data-toggle="dropdown" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true" id="dropdown01">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbar" >
+      <div class="dropdown-menu megamenu" aria-labelledby="dropdown01" >
+        <div class="row">
+          <div class="col-sm-6 col-lg-2 col-6 py-3 d-none d-lg-block d-lg-none">
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Empresas</h6>
+            <a class="dropdown-item" href="empresas.html">Listar</a>
+            <a class="dropdown-item" href="cadastrar-empresa.html">Cadastrar</a>
+            <a class="dropdown-item" href="filtrar-empresa.html">Filtrar</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Apps</h6>
+            <a class="dropdown-item" href="apps.html">Lista de Apps</a>
+            <a class="dropdown-item" href="cadastrar-app.html">Cadastrar</a>
+            <a class="dropdown-item" href="utilizacao.html">Utilização</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Financeiro</h6>
+            <a class="dropdown-item" href="faturas.html">Faturas</a>
+            <a class="dropdown-item" href="pendencias.html">Pendências</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Suporte</h6>
+            <a class="dropdown-item" href="chamados.html">Chamados abertos</a>
+            <a class="dropdown-item" href="chamados-fechados.html">Chamados fechados</a>
+            <a class="dropdown-item" href="atendimentos.html">Meus atendimentos</a>
+          </div>
+          <div class="col-sm-6 col-lg-2 col-6 py-3">
+            <h6>Perfil</h6>
+            <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+            <a class="dropdown-item" href="#" data-target="#logout" data-toggle="modal">Logout <i class="fa fa-sign-out ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <div class="container-fluid">
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-12">
+          <div class="page-header">
+            <div class="page-title">
+              <a href="#" onclick="history.back()"><i class="ti-angle-left float-left mr-2 mt-1"></i></a>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                <li class="breadcrumb-item active">Utilização</li>
+              </ol>
+              <h4>Apps</h4>
+              <div class="btn-group"> <a href="apps.html" class="btn btn-link pl-1">Lista de Apps</a> <a href="cadastrar-app.html" class="btn btn-link">Cadastrar App</a> <a href="utilizacao.html" class="btn btn-link">Utilização</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex flex-row justify-content-between align-items-center">
+          <h5 class="text-primary">Utilização</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 order-2 order-lg-1">
+          <div class="card bg-secondary text-light">
+            <!-- Filtrar cards de empresas -->
+            <div class="card-title">
+              <h4 class="text-light">Filtrar Empresas</h4>
+            </div>
+            <div class="card-body">
+              <div class="form-group col-md-12 col-12 mb-0">
+                <h6 class="mb-0">App mais usado:</h6>
+                <select id="sel-apps" class="form-control mt-1" name="apps">
+                  <option value="0">Todos os Apps</option>
+                  <option value="1">Instagram</option>
+                  <option value="2">Facebook</option>
+                  <option value="3">WhatsApp</option>
+                  <option value="4">YouTube</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12 col-12 mb-0">
+                <select id="sel-planos" class="form-control mt-1" name="planos">
+                  <option value="0">Todos os planos</option>
+                  <option value="1">1-10</option>
+                  <option value="2">11-50</option>
+                  <option value="3">51-100</option>
+                  <option value="4">+100</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12 col-12 mb-0">
+                <select id="sel-segm" class="form-control mt-1" name="Segmentos">
+                  <option value="0">Todos os segmentos</option>
+                  <option value="1">Indústria</option>
+                  <option value="2">Comércio</option>
+                  <option value="3">Serviços</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12 col-12 mt-1 mb-0">
+                <h6 class="mb-0">Uso médio diário até:</h6>
+                <div class="slider"><input type="range" min="0" max="90" value="15" oninput="rangeValue.innerText = this.value" class="form-control">
+                  <p id="rangeValue" class="text-light float-left mr-1">15</p>
+                  <p class="text-light">min</p>
+                </div>
+              </div>
+              <div class="col-md-12 col-12 mb-0 d-flex justify-content-center">
+                <a class="btn btn-primary px-3 my-2" href="#">Filtrar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-12 order-1 order-lg-2">
+          <div class="row">
+            <div class="col-md-12 m-0 p-0">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mt-0">
+                    <div class="card-title">
+                      <h4 class="mb-2">Acelormittal</h4>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Usuários</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">47</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Apps controlados</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">10</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Uso médio diário</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">00:23</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">App mais usado</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">WhatsApp</h6>
+                        </div>
+                      </div>
+                      <a class="btn btn-outline-primary my-1" href="utilizacao-empresa.html">Analisar</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mt-0">
+                    <div class="card-title">
+                      <h4 class="mb-2">Bancoob</h4>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Usuários</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">95</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Apps controlados</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">20</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Uso médio diário</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">00:21</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">App mais usado</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">Instagram</h6>
+                        </div>
+                      </div>
+                      <a class="btn btn-outline-primary my-1" href="utilizacao-empresa.html">Analisar</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mt-0">
+                    <div class="card-title">
+                      <h4 class="mb-2">Brado Logística</h4>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Usuários</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">275</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Apps controlados</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">20</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Uso médio diário</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">00:23</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">App mais usado</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">WhatsApp</h6>
+                        </div>
+                      </div>
+                      <a class="btn btn-outline-primary my-1" href="utilizacao-empresa.html">Analisar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-md-4">
+                  <div class="card mt-0">
+                    <div class="card-title">
+                      <h4 class="mb-2">Renault</h4>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Usuários</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">612</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Apps controlados</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">30</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Uso médio diário</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">00:16</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">App mais usado</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">Facebook</h6>
+                        </div>
+                      </div>
+                      <a class="btn btn-outline-primary my-1" href="#">Analisar</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mt-0">
+                    <div class="card-title">
+                      <h4 class="mb-2">Siemens</h4>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Usuários</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">435</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Apps controlados</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">10</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Uso médio diário</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">00:18</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">App mais usado</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">Instagram</h6>
+                        </div>
+                      </div>
+                      <a class="btn btn-outline-primary my-1" href="utilizacao-empresa.html">Analisar</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mt-0">
+                    <div class="card-title">
+                      <h4 class="mb-2">SPAIPA</h4>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Usuários</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">125</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Apps controlados</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">20</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">Uso médio diário</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">00:23</h6>
+                        </div>
+                      </div>
+                      <div class="row border-top border-info mx-0 py-1 px-1">
+                        <hr class="my-2 border-info" >
+                        <div class="col-6 px-0 d-flex align-items-center justify-content-start" >
+                          <p class="mb-0">App mais usado</p>
+                        </div>
+                        <div class="col-6 px-0 text-right d-flex justify-content-end align-items-center" >
+                          <h6 class="mb-0 text-muted">WhatsApp</h6>
+                        </div>
+                      </div>
+                      <a class="btn btn-outline-primary my-1" href="#">Analisar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Content Row -->
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="py-2 my-0 bg-secondary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0 text-light small">© DayOne System</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal logout -->
+  <div class="modal fade mt-2" id="logout">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-primary mt-0">Logout</h4> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja encerrar a sessão?</p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn px-3 btn-secondary" href="index.html">Sair</a>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Voltar</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
+  <!-- bootstrap -->
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <!-- // Chart js -->
+  <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+  <script src="assets/js/lib/chart-js/chartjs-init.js"></script>
+  <script src="assets/js/plot.js"></script>
+  <script src="assets/js/plot2.js"></script>
+  <!-- Datatables-->
+  <script src="assets/js/lib/data-table/datatables.min.js"></script>
+  <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+  <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+  <script src="assets/js/lib/data-table/datatables-init.js"></script>
+  
+</body>
+
+</html>
